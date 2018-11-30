@@ -12,6 +12,7 @@
 - 값만을 위한 기능만을 가지고 있다.
 - UML과 DI시키지 않는다.
 - Setter / Getter
+- 정보은닉화
 - 특정 자바 모델이나 기능, 프레임워크 등을 따르지 않는 자바 오브젝트를 지칭하는 말로 대표적으로 스프링 프레임워크가 있다.
 
 # 메모리 JVM
@@ -40,8 +41,30 @@ System.out.println(msg);</code></pre>
 - private : 모든 클래스에서 접근이 불가능하지만 내부 클래스에서는 접근이 가능하다.( 정보 은닉화 대표적인 예)
 
 # 참조 관계
-- Has ‘ a 관계 : 하나의 클래스를 다른 클래스가 사용하기 위해서 주소를 참조하는 관계
+- Has ‘ a 관계 : 하나의 클래스를 다른 클래스가 사용하기 위해서 주소를 참조하는 관계(A -> B)
 - Association (연관관계) : A가 B의 주소를 멤버필드에서 참조하는 관계 , 메서드로 B의 주소값을 인자값으로 전달 받는 형태 (CallByReference : 주소를 인자로 전달 받는 방식)
 <div>
  <img src="https://user-images.githubusercontent.com/39404179/49274345-637d0700-f4bb-11e8-95f2-3f71da84fa09.png">
 </div>
+
+# 오버로딩(Overloading)
+- 각 메서드의 이름은 같고 인자 값이 다르다.(인자의 순서가 달라도 가능 (String s , int I -> int I , String s)
+<pre><code>// 메소드 오버로딩: 메소드의 이름을 같게 해둠으로써
+// 메소드의 가독성과 일관성을 보장한다.
+public void draw(int r){
+    System.out.println("지름이 "+r+"인 원을 그린다.");
+}
+public void draw(int w, int h){
+    System.out.println("너비: "+w+", 높이: "+h+"인 사각형을 그린다.");
+}
+    public void draw(String s, int i){
+        System.out.println("String :"+ s+",int : "+i);
+    }
+    public void draw(int i,String s){
+        System.out.println("int : "+i+",String :"+ s);
+    }
+    public void draw(int x, int y, int len){
+        System.out.println("좌표 x: "+x+", 좌표 y: "+y);
+        System.out.println("길이가 "+len+"인 선을 그린다.");
+    }
+</code></pre>
