@@ -242,8 +242,7 @@ Q. 팀 A, 팀 B에서 그린 그림이 main에서 for문의 배열을 이용해�
 <div>
 	<img src="https://user-images.githubusercontent.com/39404179/49275791-d1c3c880-f4bf-11e8-80bb-00960c706c23.png">
 </div>
->[예제코드]
-<pre><code>
+<pre>[예제코드]<code>
 public class ActionFactory {
     // 싱글톤으로 정의
     
