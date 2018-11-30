@@ -29,7 +29,7 @@ System.out.println(msg);</code></pre>
 따라서 String 객체 같은 경우는 Heap 영역에 무리가 갈 수 있기 때문에 대입 연산자 같은 경우는 사용하지 않는 편을 추구한다.
 때문에 StringBuffer 객체로 문자열을 안전하게 저장하여 무리가 가지 않게 한다.
 
-<pre><code>for(int i = 0; [    ] ; i++) </code><pre>
+<pre><code>for(int i = 0; [    ] ; i++) </code></pre>
 - [    ] 안에는 ar.lenth를 사용하는 것을 권장하지 않는다.(배열의 크기값이 바로 보여지기 때문에)
 - 자바5부터는 for(int i;    ; ar)로 쓰면 자동적으로 비교하기 때문에 .lenth 메서드를 쓰는 것이 아니라 효율적으로 연산 가능하다.(향상된 for문)
 
