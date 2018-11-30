@@ -56,7 +56,29 @@ System.out.println(msg);</code></pre>
 
 # 상속
 - is'a 관계: extends 키워드를 사용하여 부모 클래스를 자식클래스가 확장하는 관계
+<pre>
+cf) is a 관계 메모리 구조
+ Ex1_B ref = new Ex1_B();   => B ⊃ A
+<div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49278649-bf01c180-f4c8-11e8-9940-d88f48c83925.png"></div>
+this (　) = 현재클래스 내에 같은 생성자를 먼저 불러옴
+super( ) = 생성자 안에서 부모클래스의 생성자를 불러옴 
+          => 부모클래스 생성 -> 자식 클래스 생성
+</pre>
 - Has'a 관계: 하나의 클래스를 다른 클래스가 사용하기 위해서 주소를 참조하는 관계(A -> B)
+<pre>
+cf) has a 관계 메모리 구조
+<code> B b = new B();
+public class B {
+    int bb = 2;
+    A aRef;
+public B(){
+    aRef = new A();  
+}
+public class A {
+    int aa = 10;
+}</code>
+<div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49278780-1e5fd180-f4c9-11e8-9b81-0a84f8b1c20b.png"></div>
+</pre>
 - Association (연관관계): A가 B의 주소를 멤버필드에서 참조하는 관계 , 메서드로 B의 주소값을 인자값으로 전달 받는 형태 (CallByReference : 주소를 인자로 전달 받는 방식)
 <div>
  <img  width="250px" src="https://user-images.githubusercontent.com/39404179/49274345-637d0700-f4bb-11e8-95f2-3f71da84fa09.png">
@@ -65,6 +87,56 @@ System.out.println(msg);</code></pre>
 <div>
 	<img width="250px" src="https://user-images.githubusercontent.com/39404179/49275976-629aa400-f4c0-11e8-9ddd-3bb04ed6a22f.png">
 </div>
+
+- 설계: 자식 클래스에 있는 공통된 기능을 부모 클래스에서 추상화된 개념으로 적는다.
+<pre>
+ex )　추상화 : drawSomething
+   자식클래스의 공통기능이 기본 기능이 됨. (Base)
+   Container = 속성을 다 포함하는 기본적인 객체 -> 부모클래스에 있어야 함
+ ex)  Circle cir = new Circle();
+      Rect rec = new Rect();
+      Triangle tr = new Triangle();
+<div><img width="250px" src="https://user-images.githubusercontent.com/39404179/49279958-3553f300-f4cc-11e8-83ad-de4e4bf95c6b.png"></div>
+</pre>
+
+- 오버라이딩(Overriding)
+<pre>
+   재정의 ( 자식클래스의 재정의 메서드가 우선 )
+   부모의 기능을 자식이 고쳐서 사용
+   부모 클래스의 메서드는 이름만 존재
+   자식 클래스의 메서드 기능 담당
+   [alt][insert] = overriding
+   우선권이 자식한테 있음, 자식 꺼가 연산됨
+ex) public static void main(String[] args) {
+        Ex3_SubCar ref = new Ex3_SubCar();
+        Ex3_SuperCar ref = new Ex3_SubCar();
+    }
+<div><img width="250px" src="https://user-images.githubusercontent.com/39404179/49280136-b317fe80-f4cc-11e8-9be9-307e2677cd86.png"></div>
+=> 자식(SubCar)은 부모(SuperCar), 자식(SubCar) 모두 출력 가능 
+   부모(SuperCar)는 부모(SUperCar)만 가능하지만
+                    overriding했을 경우 자식의 값(SubCar)을 출력 가능
+
+< Overriding사용하는 이유 >
+ = 다형성을 위해서 overriding을 사용 한다.
+   client가 부모를 통해서만 자식을 접근하면 client가 주문한 것만 볼 수 있음. 
+   자식클래스의 정보의 은닉화를 위해서
+<div><img width="250px" src="https://user-images.githubusercontent.com/39404179/49280193-df337f80-f4cc-11e8-8d67-6a387530c844.png"></div>
+ cf) 만약에, stack:부모, heap:부모 만 하면 확장이 안 되므로 참조를 자주 해야 됨.
+</pre>
+- 추상 클래스
+<pre>
+   추상화, 추상 메소드 (미완성된 메서드)
+  => 추상메서드를 가진 클래스는 반드시 추상 클래스야 한다.
+    : 추상메서드를 가진 추상 클래스를 상속받으면 
+      자식 클래스는 무조건 추상메서드를 재정의 해야 한다. 
+  => 추상메서드가 없어도 추상 클래스로 정의 될 수 있다.
+    : 추상클래스는 new로 생성될 수 없고 반드시 자식 클래스로 생성
+      추상클래스 안에서 새로운 객체를 생성할 수 없음
+  => 추상클래스는 일반클래스가 가지는 속성을 모두 가진다.
+  => 구체화 할 필요 없이 이름만 준다.
+  => 일반 클래스는 강제성이 없음
+     추상 클래스는 강제성이 있음
+</pre>
 
 # 오버로딩(Overloading)
 - 각 메서드의 이름은 같고 인자 값이 다르다.(인자의 순서가 달라도 가능 (String s , int I -> int I , String s)
@@ -86,7 +158,7 @@ System.out.println(msg);</code></pre>
         System.out.println("좌표 x: "+x+", 좌표 y: "+y);
         System.out.println("길이가 "+len+"인 선을 그린다.");
     }
-</code></pre>
+</code></pre> 
 
 # 오버라이딩(Overriding)
 - 상속받아 같은 이름으로 씀
@@ -226,3 +298,9 @@ boolean                     Boolean
     : ia를 Integer 참조 자료형으로 바꾸지 않고 Integer iD 참조 자료형에 넣음
      자동으로 Integer 참조 자료형으로 바꿔줌
 </pre>
+
+
+
+
+
+cf) visual paradigm = - : private, + : public
