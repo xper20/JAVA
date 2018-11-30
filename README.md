@@ -48,16 +48,15 @@ System.out.println(msg);</code></pre>
 - [    ] 안에는 ar.lenth를 사용하는 것을 권장하지 않는다.(배열의 크기값이 바로 보여지기 때문에)
 - 자바5부터는 for(int i;    ; ar)로 쓰면 자동적으로 비교하기 때문에 .lenth 메서드를 쓰는 것이 아니라 효율적으로 연산 가능하다.(향상된 for문)
 
-
-
 # 접근 제한자
 - public : 모든 클래스에서 접근 가능
 - protected: 자식 클래스에서만 접근 가능
 - default : 같은 패키지에 소속된 클래스(정말 디폴트가 자료형이 아니고 말 그대로 아무것도 명시하지 않으면 기본적으로 적용되는 속성) 
 - private : 모든 클래스에서 접근이 불가능하지만 내부 클래스에서는 접근이 가능하다.( 정보 은닉화 대표적인 예)
 
-# 참조 관계
-- Has ‘ a 관계 : 하나의 클래스를 다른 클래스가 사용하기 위해서 주소를 참조하는 관계(A -> B)
+# 상속
+- is'a 관계: extends 키워드를 사용하여 부모 클래스를 자식클래스가 확장하는 관계
+- Has'a 관계: 하나의 클래스를 다른 클래스가 사용하기 위해서 주소를 참조하는 관계(A -> B)
 - Association (연관관계): A가 B의 주소를 멤버필드에서 참조하는 관계 , 메서드로 B의 주소값을 인자값으로 전달 받는 형태 (CallByReference : 주소를 인자로 전달 받는 방식)
 <div>
  <img  width="250px" src="https://user-images.githubusercontent.com/39404179/49274345-637d0700-f4bb-11e8-95f2-3f71da84fa09.png">
@@ -211,4 +210,19 @@ sout(n2);
   char                     Character
 boolean                     Boolean
   void      <===========    Void    = UnBoxing ex) int n2 = n.intValue( );
+</pre>
+
+<pre>
+<div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49278350-d7bda780-f4c7-11e8-9726-1dfb901e8c9f.png)
+"></div>
+= (1) 언박싱 (Unboxing)
+    : Integer 참조 자료형을 int 일반 자료형으로 바꿔서 int ia 일반 자료형에 넣음
+  (2) 오토언박싱 (Auto Unboxing)
+    : Integer 참조 자료형을 int 일반 자료형으로 바꾸지 않고 int ib 일반 자료형에 넣음
+     자동으로 int 일반 자료형으로 바꿔줌
+  (3) 박싱 (Boxing)
+    : 456를 Integer 참조 자료형으로 바꿔서 Integer ic 참조 자료형에 넣음 
+  (4) 오토박싱 (Auto Boxing)
+    : ia를 Integer 참조 자료형으로 바꾸지 않고 Integer iD 참조 자료형에 넣음
+     자동으로 Integer 참조 자료형으로 바꿔줌
 </pre>
