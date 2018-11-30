@@ -17,7 +17,7 @@ String 객체에 경우
 <pre><code>String msg = "ABC"; 
 msg += "DEF"; 
 msg += "ZZZ"; 
-System.out.println(msg);</code></pre><code>
+System.out.println(msg);</code></pre>
 100번지 : "ABC" + 200번지 : "DEF"
 300번지 : “ABCDEF"
  
