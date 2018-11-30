@@ -17,9 +17,7 @@
 msg += "DEF"; 
 msg += "ZZZ"; 
 System.out.println(msg);</code></pre><code>
-
 100번지 : "ABC" + 200번지 : "DEF"
 300번지 : “ABCDEF" 
-
 따라서 String 객체 같은 경우는 Heap 영역에 무리가 갈 수 있기 때문에 대입 연산자 같은 경우는 사용하지 않는 편을 추구한다.
 때문에 StringBuffer 객체로 문자열을 안전하게 저장하여 무리가 가지 않게 한다.
