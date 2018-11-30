@@ -130,7 +130,7 @@ ex) public static void main(String[] args) {
 </pre>
 - 추상 클래스
 <pre>
-   추상화, 추상 메소드 (미완성된 메서드)
+추상화, 추상 메소드 (미완성된 메서드)
   => 추상메서드를 가진 클래스는 반드시 추상 클래스야 한다.
     : 추상메서드를 가진 추상 클래스를 상속받으면 
       자식 클래스는 무조건 추상메서드를 재정의 해야 한다. 
@@ -145,7 +145,8 @@ ex) public static void main(String[] args) {
 
 # 오버로딩(Overloading)
 - 각 메서드의 이름은 같고 인자 값이 다르다.(인자의 순서가 달라도 가능 (String s , int I -> int I , String s)
-<pre><code>// 메소드 오버로딩: 메소드의 이름을 같게 해둠으로써
+<pre><code>
+    // 메소드 오버로딩: 메소드의 이름을 같게 해둠으로써
     // 메소드의 가독성과 일관성을 보장한다.
     public void draw(int r){
         System.out.println("지름이 "+r+"인 원을 그린다.");
