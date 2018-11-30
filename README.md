@@ -80,16 +80,16 @@ public class A {
     int aa = 10;
 }</code></pre>
 <div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49278780-1e5fd180-f4c9-11e8-9b81-0a84f8b1c20b.png"></div>
-====================================================================================================================================
+
 ## Association (연관관계): A가 B의 주소를 멤버필드에서 참조하는 관계 , 메서드로 B의 주소값을 인자값으로 전달 받는 형태 (CallByReference : 주소를 인자로 전달 받는 방식)
 <div>
  <img  width="400px" src="https://user-images.githubusercontent.com/39404179/49274345-637d0700-f4bb-11e8-95f2-3f71da84fa09.png">
 </div>
+
 ## Composition: A와 B라는 클레스가 있을 때 생성자를 새로 생성해서 아예 종속 시켜라
 <div>
 	<img width="400px" src="https://user-images.githubusercontent.com/39404179/49275976-629aa400-f4c0-11e8-9ddd-3bb04ed6a22f.png">
 </div>
-
 
 ## 설계: 자식 클래스에 있는 공통된 기능을 부모 클래스에서 추상화된 개념으로 적는다.
 <pre>
@@ -101,7 +101,6 @@ ex )　추상화 : drawSomething
       Triangle tr = new Triangle();
 </pre>
 <div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49279958-3553f300-f4cc-11e8-83ad-de4e4bf95c6b.png"></div>
-
 
 ## 오버라이딩(Overriding)
 <pre>
@@ -132,7 +131,7 @@ ex) public static void main(String[] args) {
  cf) 만약에, stack:부모, heap:부모 만 하면 확장이 안 되므로 참조를 자주 해야 됨.
 </pre>
 
-- 추상 클래스
+## 추상 클래스
 <pre>
 추상화, 추상 메소드 (미완성된 메서드)
   => 추상메서드를 가진 클래스는 반드시 추상 클래스야 한다.
