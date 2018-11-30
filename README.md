@@ -245,9 +245,7 @@ Q. 팀 A, 팀 B에서 그린 그림이 main에서 for문의 배열을 이용해�
 <pre>[예제코드]<code>
 public class ActionFactory {
     // 싱글톤으로 정의
-    
     private static ActionFactory action;	
-
     // 다른 클래스에서 참조하지 못하게 private으로 선언
     private ActionFactory(){}
     public static ActionFactory getAction(){
