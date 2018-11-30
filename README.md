@@ -113,11 +113,11 @@ System.out.println(msg);</code></pre>
 # 배열
 -배열이란 하나의 값 또는 주소만을 가지고 있는 변수와 달리 여러개의 데이터를 가지고 있다  
  는 차이점이 있다. 
-
 -배열의 선언
   1. 변수 선언과 거의 비슷하며 여러 개의 데이터가 모여 있어 {}를 이용한다.
   2. 배열의 크기는 최초에 한번 설정되면 변경 불가능하다.
-  ex) int[] arr = new int[5]    
+  ex) int[] arr = new int[5]
+  
 하나하나 뜯어보면
 int[] => 자료형이 int형인 배열을 만들 것이다.
 arr => 그 배열의 이름은 arr 이라고 할것이며
@@ -126,7 +126,6 @@ int[5] => 5개의 데이터를 가지는 배열을 만들 것이다.
 라는 뜻으로 해석할 수 있다.
 
 자료를 넣을 때는
-
 int arr[0] = 10;
 int arr[1] = 20;
 int arr[2] = 30;
@@ -163,7 +162,7 @@ arr이라는 배열의 첫 값을 I 에게 할당하고 그 후 다음 값으로
 arr 자리에 오는 것이 int 형 배열이 아니라 char 라면 int I 또한 char I로 바꿔주어야 한다.
 
 <div>
-	<img width="250px" src="https://user-images.githubusercontent.com/39404179/49276162-02583200-f4c1-11e8-9ae1-01f53b4d95db.png">
+	<img src="https://user-images.githubusercontent.com/39404179/49276162-02583200-f4c1-11e8-9ae1-01f53b4d95db.png">
 </div>
 
 
@@ -178,7 +177,7 @@ ex)
      System.out.println("주소값 비교: "+(str[1]==str[2]));
 
 <div>
-	<img width="250" src="https://user-images.githubusercontent.com/39404179/49276220-2fa4e000-f4c1-11e8-9c8a-e875050a1884.png">
+	<img src="https://user-images.githubusercontent.com/39404179/49276220-2fa4e000-f4c1-11e8-9c8a-e875050a1884.png">
 </div>
 
 = str[0]일 때는 static에 null값이므로 kosta188생성해서 출력
