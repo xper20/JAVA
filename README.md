@@ -14,11 +14,12 @@
 - Heap 　　: 생성된 객체		=> 가비지 컬렉션이 삭제해줌
 >>>>>> String 객체에 경우 <<<<<<
 ex)
-<code>        String msg = "ABC";
-        msg += "DEF";
-        msg += "ZZZ";
-        System.out.println(msg);
-</code>
+<pre><code>
+String msg = "ABC"; 
+msg += "DEF"; 
+msg += "ZZZ"; 
+System.out.println(msg);
+</code></pre><code>
 
 100번지 : "ABC" + 200번지 : "DEF"
 300번지 : “ABCDEF" 
