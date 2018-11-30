@@ -55,7 +55,11 @@ System.out.println(msg);</code></pre>
 - private : 모든 클래스에서 접근이 불가능하지만 내부 클래스에서는 접근이 가능하다.( 정보 은닉화 대표적인 예)
 
 # 상속
-## is'a 관계: extends 키워드를 사용하여 부모 클래스를 자식클래스가 확장하는 관계
+## is-a 관계
+ - extends 키워드를 사용하여 부모 클래스를 자식클래스가 확장하는 관계
+ - 한 객체에서 다른 객체를 상속받은 관계
+ - 하위 클래스가 상위 클래스를 포함하고 있는 관계
+ - 부모와 자식 관계로 객체의 주소 값을 heap영역에 한 개 참조
 <pre>
 cf) is a 관계 메모리 구조
  Ex1_B ref = new Ex1_B();   => B ⊃ A
@@ -80,18 +84,25 @@ public class A {
     int aa = 10;
 }</code></pre>
 <div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49278780-1e5fd180-f4c9-11e8-9b81-0a84f8b1c20b.png"></div>
+## has-a 관계
+ - 다른 객체를 참조하기 위해 객체 주소를 가지고 있는 관계 
+ - 클래스 내에 다른 클래스를 포함하는 관계
+ - 객체가 서로 다른 객체의 주소 값을 가짐(결합도가 높다)
+ - heap영역에 두 개 참조
+ 
+### Association (연관관계)
+ - A가 B의 주소를 멤버필드에서 참조하는 관계 , 메서드로 B의 주소값을 인자값으로 전달 받는 형태 (CallByReference : 주소를 인자로 전달 받는 방식)
+ - 객체 내부에서 생성하지 않고 다른 객체에서 받아와 사용하므로 외부에서 삭제되면 내부에서도 소멸됨.
+<div><img  width="400px" src="https://user-images.githubusercontent.com/39404179/49274345-637d0700-f4bb-11e8-95f2-3f71da84fa09.png"></div>
 
-## Association (연관관계): A가 B의 주소를 멤버필드에서 참조하는 관계 , 메서드로 B의 주소값을 인자값으로 전달 받는 형태 (CallByReference : 주소를 인자로 전달 받는 방식)
-<div>
- <img  width="400px" src="https://user-images.githubusercontent.com/39404179/49274345-637d0700-f4bb-11e8-95f2-3f71da84fa09.png">
-</div>
+### Composition (합성관계)
+ - A와 B라는 클레스가 있을 때 생성자를 새로 생성해서 아예 종속 시켜라
+ - 객체 내부에서 new 키워드로 먼저 생성한 후 다른 객체 주소를 받아 사용하므로 
+ 상대쪽 객체가 소멸해도 현재 내부에 생성된 객체의 주소값이 소멸되지 않아 사용이 가능하다.
+<div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49275976-629aa400-f4c0-11e8-9ddd-3bb04ed6a22f.png"></div>
 
-## Composition: A와 B라는 클레스가 있을 때 생성자를 새로 생성해서 아예 종속 시켜라
-<div>
-	<img width="400px" src="https://user-images.githubusercontent.com/39404179/49275976-629aa400-f4c0-11e8-9ddd-3bb04ed6a22f.png">
-</div>
-
-## 설계: 자식 클래스에 있는 공통된 기능을 부모 클래스에서 추상화된 개념으로 적는다.
+## 설계
+ - 자식 클래스에 있는 공통된 기능을 부모 클래스에서 추상화된 개념으로 적는다.
 <pre>
 ex )　추상화 : drawSomething
    자식클래스의 공통기능이 기본 기능이 됨. (Base)
@@ -145,7 +156,59 @@ ex) public static void main(String[] args) {
   => 일반 클래스는 강제성이 없음
      추상 클래스는 강제성이 있음
 </pre>
+<div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49281525-23744f00-f4d0-11e8-9ec6-125087557997.png"></div>
+<pre>
+부모 = abstract (A) -> 자식 = abstract (B) -> 자식 = 일반 클래스
+=> 두 번째 자식이 abstract일 경우 부모의 A는 재정의의 강제성이 없다.
+   세 번째 자식이 abstract일 경우 부모의 A, B는 재정의의 강제성이 없다.
+   세 번째 자식이 일반 클래스일 경우 부모의 A, B는 무조건 재정의
 
+추상 메서드를 사용하는 이유?
+부모 객체를 생성 못하게 막아야 할 때 또는 반드시 재정의 해야 할 메서드가 있을 때 사용
+</pre>
+
+## final 클래스
+<pre>
+ 1) 상속할 수 없는 클래스를 뜻한다.
+ 2) 변수에 final을 사용하면 변수를 수정할 수 없다.
+ 3) 메서드에 final을 사용하면 오버라이딩을 할 수 없다.
+ 4) 클래스에 final을 사용하면 상속을 할 수 없다.
+</pre>
+
+## interface
+<pre>
+ 1) 구조: 추상메서드, 상수 값
+ 2) implements 키워드를 사용해서 일반 클래스를 다중 구현가능 (다중 상속)
+    -> 일반 클래스에서 extends로 하나만 상속이 가능하지만
+	인터페이스끼리는 extends로 여러개 상속이 가능하다.
+ 3) 인터페이스는 구현이 불가능 하다.(추상 메서드)
+ 4) interface는 abstract와 static을 자동으로 붙여준다.
+ 5) interface에서 일반 클래스로 implements로 여러 개 상속 가능( = 상속)
+    interface끼리는 extends로 여러 개 상속 가능
+    interface끼리는 implements 불가능
+ 6) 객체간의 결합도를 낮추기 위해 상속
+
+Q. 팀 A, 팀 B에서 그린 그림이 main에서 for문의 배열을 이용해서 한 번에 출력
+ = MyColor, MyDraw, MyTeamA, MyTeamB, Team_AB_Main, MyInter
+</pre>
+<div><img src="https://user-images.githubusercontent.com/39404179/49281680-7fd76e80-f4d0-11e8-9109-21ffdbe6f5b4.png"></div>
+
+## factory
+<pre>
+ 1) 결합도( = 의존성)를 낮추고 다형성을 유지하기 위해 interface를 사용함
+ 2) 프로그램 처리를 한곳에서 하는 것이 아니라 다른 서브 클래스로 위임하여 처리
+  - 유지보수 및 수정할 때 프로그램이 중단되지 않고 지속적으로 실행 할 수 있게 함.
+객체간의 결합도를 낮추고 싶다 => 상속을 시킨다. (like Interface)
+</pre>
+<div><img src="https://user-images.githubusercontent.com/39404179/49282198-e3ae6700-f4d1-11e8-8ea5-41c223fb0980.png"></div>
+<pre>
+ (1) has - a 관계 : 결합도가 높다
+<div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49282252-03458f80-f4d2-11e8-8808-bbf24a84c86c.png"></div>
+ (2) interface : 결합도를 낮추기 위해 하나의 레퍼런스를 사용해 다형성을 형성
+
+ (3) Object Factory : 다형성을 참조로 한 객체를 생성하고 관리층을 위임
+		     ( 책임에 대한 분리)
+</pre>
 # 오버로딩(Overloading)
 - 각 메서드의 이름은 같고 인자 값이 다르다.(인자의 순서가 달라도 가능 (String s , int I -> int I , String s)
 <pre><code>
@@ -179,7 +242,23 @@ ex) public static void main(String[] args) {
 <div>
 	<img src="https://user-images.githubusercontent.com/39404179/49275791-d1c3c880-f4bf-11e8-80bb-00960c706c23.png">
 </div>
+>[예제코드]
+<pre><code>
+public class ActionFactory {
+    // 싱글톤으로 정의
+    
+    private static ActionFactory action;	
 
+    // 다른 클래스에서 참조하지 못하게 private으로 선언
+    private ActionFactory(){}
+    public static ActionFactory getAction(){
+        if(action == null){	// action의 객체가 생성이 안됐을 때
+            action = new ActionFactory();
+        }
+        return action;		// action의 객체가 생성되어 있을 때
+    }
+}
+</code></pre>
 # 생성자
  1) 생성자의 이름은 클래스의 이름과 동일해야 한다.
  2) 반환값이 없기 때문에 Return을 사용하지 않는다.
