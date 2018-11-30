@@ -16,9 +16,24 @@
 - 특정 자바 모델이나 기능, 프레임워크 등을 따르지 않는 자바 오브젝트를 지칭하는 말로 대표적으로 스프링 프레임워크가 있다.
 
 # 메모리 JVM
-- Stack　: 지역변수, 메소드 실행	=> 가벼운 공간이라 사용 후 바로 삭제
-- Heap 　　: 생성된 객체		=> 가비지 컬렉션이 삭제해줌
-
+- Stack: 지역변수, 메소드 실행	=> 가벼운 공간이라 사용 후 바로 삭제
+- Heap: 생성된 객체		=> 가비지 컬렉션이 삭제해줌
+- 상수풀(전역변수, static변수)
+>static
+<pre>
+ 1 static 영역 위치
+ 2 static 키워드가 붙으면 오직 static 영역에 하나만 생성
+	즉, class 내부에서 선언해도 stack과 heap에서는 절대 선언되지 않는다.)
+ 3 생성 없이도 접근이 가능하다. ( heap과는 달라서 선언하지 않아도 됨, 따라서 객체간의 공유가 가능하다.)
+<code>class A(){ ... }
+	A ref = new A();
+	A ref2 = new A();
+	ref2 = ref;
+ </code>
+ <div>
+ <img src="">
+ </div>
+</pre>
 >String 객체에 경우
 <pre><code>String msg = "ABC"; 
 msg += "DEF"; 
@@ -33,6 +48,8 @@ System.out.println(msg);</code></pre>
 <pre><code>for(int i = 0; [    ] ; i++) </code></pre>
 - [    ] 안에는 ar.lenth를 사용하는 것을 권장하지 않는다.(배열의 크기값이 바로 보여지기 때문에)
 - 자바5부터는 for(int i;    ; ar)로 쓰면 자동적으로 비교하기 때문에 .lenth 메서드를 쓰는 것이 아니라 효율적으로 연산 가능하다.(향상된 for문)
+
+
 
 # 접근 제한자
 - public : 모든 클래스에서 접근 가능
@@ -50,13 +67,13 @@ System.out.println(msg);</code></pre>
 # 오버로딩(Overloading)
 - 각 메서드의 이름은 같고 인자 값이 다르다.(인자의 순서가 달라도 가능 (String s , int I -> int I , String s)
 <pre><code>// 메소드 오버로딩: 메소드의 이름을 같게 해둠으로써
-// 메소드의 가독성과 일관성을 보장한다.
-public void draw(int r){
-    System.out.println("지름이 "+r+"인 원을 그린다.");
-}
-public void draw(int w, int h){
-    System.out.println("너비: "+w+", 높이: "+h+"인 사각형을 그린다.");
-}
+    // 메소드의 가독성과 일관성을 보장한다.
+    public void draw(int r){
+        System.out.println("지름이 "+r+"인 원을 그린다.");
+    }
+    public void draw(int w, int h){
+        System.out.println("너비: "+w+", 높이: "+h+"인 사각형을 그린다.");
+    }
     public void draw(String s, int i){
         System.out.println("String :"+ s+",int : "+i);
     }
@@ -68,3 +85,7 @@ public void draw(int w, int h){
         System.out.println("길이가 "+len+"인 선을 그린다.");
     }
 </code></pre>
+
+# 오버라이딩(Overriding)
+- 상속받아 같은 이름으로 씀
+
