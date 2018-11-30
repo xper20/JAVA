@@ -161,9 +161,7 @@ for(int I  : arr){
 arr이라는 배열의 첫 값을 I 에게 할당하고 그 후 다음 값으로 계속해서 넘어가다가 arr이 끝나는 부분 즉 null값을 만난다면 for문을 탈출하도록 되어 있다.
 arr 자리에 오는 것이 int 형 배열이 아니라 char 라면 int I 또한 char I로 바꿔주어야 한다.
 
-<div>
-	<img src="https://user-images.githubusercontent.com/39404179/49276162-02583200-f4c1-11e8-9ae1-01f53b4d95db.png">
-</div>
+<div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49276162-02583200-f4c1-11e8-9ae1-01f53b4d95db.png"</div>
 
 
 ** String 변수는 char형 배열과 마찬가지이다.
@@ -176,9 +174,7 @@ ex)
      System.out.println("주소값 비교: "+(str[0]==str[3])); 
      System.out.println("주소값 비교: "+(str[1]==str[2]));
 
-<div>
-	<img src="https://user-images.githubusercontent.com/39404179/49276220-2fa4e000-f4c1-11e8-9c8a-e875050a1884.png">
-</div>
+<div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49276220-2fa4e000-f4c1-11e8-9c8a-e875050a1884.png"></div>
 
 = str[0]일 때는 static에 null값이므로 kosta188생성해서 출력
   str[3]일 때는 static에 kosta 188이 이미 존재 하므로 static에 있는 kosta188을 불러오므로 주소값이 같음.
