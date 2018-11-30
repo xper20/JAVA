@@ -25,13 +25,13 @@
  2 static 키워드가 붙으면 오직 static 영역에 하나만 생성
 	즉, class 내부에서 선언해도 stack과 heap에서는 절대 선언되지 않는다.)
  3 생성 없이도 접근이 가능하다. ( heap과는 달라서 선언하지 않아도 됨, 따라서 객체간의 공유가 가능하다.)
-<code>class A(){ ... }
+<pre><code>class A(){ ... }
 	A ref = new A();
 	A ref2 = new A();
 	ref2 = ref;
- </code>
+ </code></pre>
  <div>
- <img src="">
+ <img src="https://user-images.githubusercontent.com/39404179/49274879-084c1400-f4bd-11e8-9f54-7c9d44b4bbec.png">
  </div>
 </pre>
 >String 객체에 경우
