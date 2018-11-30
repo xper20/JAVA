@@ -12,14 +12,11 @@
 # 메모리 JVM
 - Stack　: 지역변수, 메소드 실행	=> 가벼운 공간이라 사용 후 바로 삭제
 - Heap 　　: 생성된 객체		=> 가비지 컬렉션이 삭제해줌
->>>>>> String 객체에 경우 <<<<<<
-ex)
-<pre><code>
-String msg = "ABC"; 
+ String 객체에 경우
+<pre><code>String msg = "ABC"; 
 msg += "DEF"; 
 msg += "ZZZ"; 
-System.out.println(msg);
-</code></pre><code>
+System.out.println(msg);</code></pre><code>
 
 100번지 : "ABC" + 200번지 : "DEF"
 300번지 : “ABCDEF" 
