@@ -291,7 +291,7 @@ boolean                     Boolean
 </pre>
 
 <pre>
-<div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49278350-d7bda780-f4c7-11e8-9726-1dfb901e8c9f.png)
+<div><img width="400px" src="https://user-images.githubusercontent.com/39404179/49278350-d7bda780-f4c7-11e8-9726-1dfb901e8c9f.png
 "></div>
 = (1) 언박싱 (Unboxing)
     : Integer 참조 자료형을 int 일반 자료형으로 바꿔서 int ia 일반 자료형에 넣음
