@@ -30,7 +30,7 @@
 	ref2 = ref;
  </code></pre>
 <div>
- <img src="https://user-images.githubusercontent.com/39404179/49274879-084c1400-f4bd-11e8-9f54-7c9d44b4bbec.png">
+ <img width="250px" src="https://user-images.githubusercontent.com/39404179/49274879-084c1400-f4bd-11e8-9f54-7c9d44b4bbec.png">
 </div>
 
 >String 객체에 경우
@@ -60,7 +60,7 @@ System.out.println(msg);</code></pre>
 - Has ‘ a 관계 : 하나의 클래스를 다른 클래스가 사용하기 위해서 주소를 참조하는 관계(A -> B)
 - Association (연관관계) : A가 B의 주소를 멤버필드에서 참조하는 관계 , 메서드로 B의 주소값을 인자값으로 전달 받는 형태 (CallByReference : 주소를 인자로 전달 받는 방식)
 <div>
- <img  width="200px" src="https://user-images.githubusercontent.com/39404179/49274345-637d0700-f4bb-11e8-95f2-3f71da84fa09.png">
+ <img  width="250px" src="https://user-images.githubusercontent.com/39404179/49274345-637d0700-f4bb-11e8-95f2-3f71da84fa09.png">
 </div>
 
 # 오버로딩(Overloading)
@@ -88,3 +88,10 @@ System.out.println(msg);</code></pre>
 # 오버라이딩(Overriding)
 - 상속받아 같은 이름으로 씀
 
+# 싱글톤 패턴 (디자인 패턴)
+- static 메모리 구조 파악
+- 싱글톤은 다른 소스에서 new로 생성하는 것을 막기위해 기본 생성자를 private으로 선언한다. 그리고 static 형태의 메서드에 객체를 생성하게 하고 그 안에 조건문으로 기존에 들어간 값이 없는지 검사하고 연결 상태인 것이 없다면 객체를 생성해 준다.
+디자인 패턴 중 싱글톤은 무조건 객체를 하나만 생성하게 설계된 패턴이다.
+<div>
+	<img src="https://user-images.githubusercontent.com/39404179/49275791-d1c3c880-f4bf-11e8-80bb-00960c706c23.png">
+</div>
