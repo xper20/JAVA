@@ -186,3 +186,33 @@ ex)
                    str[1] = String
                    str[2] = String
                    str[4] = String
+
+
+
+# WrapperClass
+- 일반 자료 형을 내부적으로 품고 있는 객체를 제공해 주는 것
+<pre>ex) int, boolean, double, ...
+	Class Boolean { boolean };</pre>
+- 일반 자료 형에 연관되는 메소드 기능을 가지고 있음
+<pre>< 생성 방법 >
+* AutoBoxing = 참조 자료형
+Integer n = 10; => n이 100번지 생성 = WrapperClass로 생성
+sout(n);
+n.기능 => n.속성/메소드
+* UnBoxing = 일반 자료형
+Integer n = 10; => n이 100번지 생성 = WrapperClass로 생성
+int n2 = n; 
+sout(n2);
+</pre>
+<pre>
+기본 자료형 =========> Wrapper 객체 = AutoBoxing ex) Integer n = new Integer(10);
+   byte                      Byte
+   short                     Short
+    int                      Integer
+   long                      Long
+  float                       Float
+ double                     Double
+  char                     Character
+boolean                     Boolean
+  void      <===========    Void    = UnBoxing ex) int n2 = n.intValue( );
+</pre>
